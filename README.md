@@ -14,8 +14,6 @@ The scaffold provides the following grunt methods:
 
 `grunt` - deploys the development environment with live reload.  This environment runs testing, doc gen, and analytics!
 
-`grunt build` - builds the module for front-end usage
-
 `grunt dist` - performs a build, bumps the version (hotfix), and pushes to your repo!
 
 

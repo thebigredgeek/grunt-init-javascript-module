@@ -24,7 +24,12 @@ module.exports = function(grunt){
         },
         uglify:{
             bower:{
-                "dist/{%= name %}.min.js":["src/**/*.js"]
+                options: {
+                    sourceMap: "dist/{%= name %}.map"
+                },
+                files:{
+                    "dist/{%= name %}.min.js":["src/**/*.js"]
+                }
             }
         },
         karma:{
@@ -111,7 +116,7 @@ module.exports = function(grunt){
             dist:{
                 src: [
                     "README.md",
-                    "dist/{%= name %}.js"
+                    "src/{%= name %}.js"
                 ],
                 options:{
                     destination: 'docs'
@@ -129,7 +134,6 @@ module.exports = function(grunt){
         }
     }
     grunt.registerTask('default',["concurrent"]);
-    grunt.registerTask('test',['jshint','jasmine_node','plato','jsdoc']);
-    grunt.registerTask('build',['jshint','strip','uglify','jasmine_node','karma','plato','jsdoc'])
+    grunt.registerTask('test',['jshint','uglify','jasmine_node','karma','plato','jsdoc'])
     grunt.registerTask('dist',['jshint','strip','uglify','jasmine_node','karma','plato','jsdoc','bump']);
 };
