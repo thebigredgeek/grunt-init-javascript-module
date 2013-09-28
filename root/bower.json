@@ -1,0 +1,12 @@
+{
+    "name":"{%= name %}",
+    "version": "{%= version %}",
+    "main":"dist/{%= name %}.min.js",
+    "ignore":[
+        ".idea",
+        "node_modules",
+        "docs",
+        "analytics",
+        "test"
+    ]
+}
